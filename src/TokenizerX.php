@@ -10,6 +10,7 @@ class TokenizerX
     {
         if ($model != null) {
             $provider = new EncoderProvider();
+            $provider->setVocabCache('/tmp/tiktoken_'.config('app.name'));
             $encoder = $provider->getForModel($model);
             $tokens = $encoder->encode($prompt);
 
@@ -24,6 +25,7 @@ class TokenizerX
     {
         if ($model != null) {
             $provider = new EncoderProvider();
+            $provider->setVocabCache('/tmp/tiktoken_'.config('app.name'));
             $encoder = $provider->getForModel($model);
             $tokens = $encoder->encode($prompt);
 
